@@ -53,7 +53,7 @@ app.use(
 					date: new Date(args.eventInput.date),
 				});
 
-				event
+				return event
 					.save()
 					.then((result) => {
 						console.log(result);
@@ -77,5 +77,7 @@ mongoose
 		app.listen(3000);
 	})
 	.catch((err) => {
-		console.log(error);
+		console.log(
+			"Es ist ein Fehler bei der Verbinddung mit der Datenbank aufgetreten"
+		);
 	});
